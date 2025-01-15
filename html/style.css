@@ -1,0 +1,270 @@
+@font-face { 
+  font-family: "font"; /* Déclare une police personnalisée appelée "font" */
+  src: url('../Portefolio/font/monofonto/monofonto.ttf') format('truetype'); /* Définit la source de la police */
+}
+
+* {
+  margin: 0; /* Supprime les marges par défaut de tous les éléments */
+  padding: 0; /* Supprime les espacements internes par défaut de tous les éléments */
+  box-sizing: border-box; /* Inclut les marges et bordures dans les calculs de largeur/hauteur */
+}
+
+html {
+  height: 100%; /* Définit la hauteur de la page à 100% de la fenêtre */
+  color: #00d435; /* Définit la couleur du texte par défaut en vert */
+  font-family: "font"; /* Applique la police personnalisée "font" */
+  font-weight: bold;
+}
+
+body {
+  font-family: "font", sans-serif; /* Définit la police principale du corps du texte */
+  color: #00d435; /* Définit la couleur du texte en vert clair */
+  background: #272b27; /* Applique un fond noir/gris foncé */
+  margin: 0; /* Supprime les marges externes du corps */
+  width: 100%; /* Définit la largeur du corps à 100% */
+  height: 100%; /* Définit la hauteur du corps à 100% */
+  overflow: hidden; /* Empêche le défilement de la page */
+  position: relative; /* Permet de positionner les pseudo-éléments par rapport au corps */
+}
+
+/* Pseudo-élément pour la ligne répétée */
+body::before {
+  content: ""; /* Crée un pseudo-élément vide */
+  position: fixed; /* Le pseudo-élément reste fixé au même endroit lors du défilement */
+  top: 0; /* Positionne le pseudo-élément en haut de la page */
+  left: 0; /* Positionne le pseudo-élément à gauche de la page */
+  width: 100%; /* Définit la largeur du pseudo-élément à 100% de la page */
+  height: 100%; /* Définit la hauteur du pseudo-élément à 100% de la page */
+  background-image: repeating-linear-gradient( /* Applique un motif de lignes répétées */
+    0deg,
+    rgba(35, 70, 38, 0.3),
+    rgba(35, 70, 38, 0.3) 4px,
+    transparent 4px,
+    transparent 8px
+  );
+  z-index: 9999; /* Place le pseudo-élément au-dessus de tout le contenu */
+  pointer-events: none; /* Désactive l'interaction avec le pseudo-élément */
+}
+
+li {
+  list-style: none; /* Supprime les puces des listes */
+}
+
+.navbar {
+  position: relative; /* Permet de positionner les enfants par rapport à la navbar */
+  margin-bottom: 2vh; /* Ajoute une marge externe en bas de 2% de la hauteur de la fenêtre */
+  margin-left: 20vh; /* Ajoute une marge externe à gauche de 20% de la hauteur de la fenêtre */
+  margin-right: 20vh; /* Ajoute une marge externe à droite de 20% de la hauteur de la fenêtre */
+  align-items: flex-start; /* Aligne les éléments au début de la ligne horizontale */
+}
+
+.navbar ul { 
+  list-style: none; /* Supprime les puces des éléments de la liste */
+  display: flex; /* Affiche les éléments de la liste en ligne */
+  justify-content: space-around; /* Ajoute des espaces autour des éléments */
+  padding-top: 2vh; /* Ajoute un espacement interne en haut de 2% de la hauteur de la fenêtre */
+}
+
+.navbar li a {
+  position: relative; /* Permet de positionner les enfants de manière relative */
+  padding: 1vh; /* Ajoute un espacement interne de 1% de la hauteur de la fenêtre */
+  text-decoration: none; /* Supprime le soulignement des liens */
+  color: #00ff00; /* Définit la couleur des liens en vert clair */
+  font-size: 4vh; /* Définit la taille de la police à 5% de la hauteur de la fenêtre */
+  z-index: 100; /* Définit la priorité de superposition de l'élément */
+}
+
+.navbar li a:hover {
+  border-radius: 3px; /* Arrondit les coins des liens au survol */
+  color: #000000; /* Change la couleur du texte au survol */
+  background: #00d435; /* Change la couleur de fond au survol */
+}
+
+main {
+  margin: 7vh;
+  font-size: 2vh; /* Définit la taille de la police */
+
+
+
+/*=============================================================================
+=================================PAGE ACCUEIL==================================
+=============================================================================*/
+
+}
+
+.menu-accueil {
+  display: flex; /* Affiche les éléments en flexbox */
+}
+
+.menu-accueil li {
+  list-style: none; /* Supprime les puces des éléments de la liste */
+  padding: 2vh; /* Ajoute un espacement interne*/
+  cursor: pointer; /* Change le curseur en pointeur au survol */
+  padding-right: 10vh;
+
+}
+
+.menu-accueil li:hover {
+  background-color: #00ff00; /* Change la couleur de fond au survol */
+  color: #000000; /* Change la couleur du texte en noir au survol */
+}
+
+/* Classe pour garder le fond vert quand le bouton est actif */
+.menu-accueil li.active {
+  background-color: #00ff00; /* Définit la couleur de fond quand le bouton est actif */
+  color: #000000; /* Change la couleur du texte en noir */
+
+}
+
+.accueil-options {
+  position: relative;
+  top: -19.36vh;
+  display: flex; /* Affiche les éléments en flexbox */
+  margin-left: 50vh; /* Ajoute une marge à gauche de 50% de la hauteur de la fenêtre */
+
+}
+.accueil-options p {
+  background-color: rgb(38, 78, 34);
+  padding: 2vh;
+}
+
+.accueil-options li {
+  position: relative; /* Permet de positionner les enfants de manière relative */
+}
+
+#liste-maxime-madureira {
+  display: none; /* Cache la liste au départ */
+}
+
+.maxime-photo {
+  width: 50vh;  /* Largeur de l'image */
+  height: auto; /* Hauteur de l'image */
+}
+#liste-logiciels {
+  display: none; /* Cache la liste au départ */
+}
+
+#liste-certifications {
+  display: none; /* Cache la liste au départ */
+}
+
+.grid-logiciels {
+  display: grid; /* Utilisation de la mise en page CSS Grid */
+  grid-template-columns: repeat(2, 1fr); /* Crée une grille avec 2 colonnes de largeur égale */
+  gap: 3vh; /* Espace de 20px entre les éléments de la grille */
+  padding: 3vh;
+}
+
+.grid-logiciels-item {
+  border: 0.5vh solid #00ff00; /* Bordure verte de 1px de largeur autour des éléments */
+  padding: 2vh;
+  text-align: center; /* Centre le texte horizontalement à l'intérieur de l'élément */
+}
+
+.grid-logiciels-item:hover {
+  background-color: #00ff00;
+  color: #000000;
+
+}
+
+
+
+/*============================================================================
+=================================PAGE PARCOURS================================
+=============================================================================*/
+
+
+.menu-parcours ul {
+  display: flex; /* Affichage en ligne */
+  justify-content: center; /* Centre les éléments horizontalement */
+  gap: 10vh; /* Espace horizontal de 10vh entre les éléments */
+}
+
+.menu-parcours li {
+  display: inline-block;
+  padding: 2vh 8vh; /* Espacement interne pour les éléments */
+  cursor: pointer;
+}
+
+.menu-parcours li:hover {
+  background-color: #00ff00; /* Change la couleur de fond au survol */
+  color: #000000; /* Change la couleur du texte en noir au survol */
+}
+
+/* Classe pour garder le fond vert quand le bouton est actif */
+.menu-parcours li.active {
+  background-color: #00ff00; /* Définit la couleur de fond quand le bouton est actif */
+  color: #000000; /* Change la couleur du texte en noir */
+}
+
+#liste-formations{
+  display: none;
+}
+
+#liste-experiences{
+  display: none;
+}
+
+.grid-formations {
+  display: grid; /* Utilisation de la mise en page CSS Grid */
+  grid-template-columns: repeat(4, 1fr); /* Crée une grille avec 2 colonnes de largeur égale */
+  gap: 3vh; /* Espace de 20px entre les éléments de la grille */
+  padding: 3vh;
+}
+
+.grid-formations-item {
+  border: 0.5vh solid #00ff00; /* Bordure verte de 1px de largeur autour des éléments */
+  padding: 2vh;
+  text-align: center; /* Centre le texte horizontalement à l'intérieur de l'élément */
+}
+
+.grid-formations-item:hover {
+  background-color: #00ff00;
+  color: #000000;
+
+}
+
+.grid-experiences {
+  display: grid; /* Utilisation de la mise en page CSS Grid */
+  grid-template-columns: repeat(4, 1fr); /* Crée une grille avec 2 colonnes de largeur égale */
+  gap: 3vh; /* Espace de 20px entre les éléments de la grille */
+  padding: 3vh;
+}
+
+.grid-experiences-item {
+  border: 0.5vh solid #00ff00; /* Bordure verte de 1px de largeur autour des éléments */
+  padding: 2vh;
+  text-align: center; /* Centre le texte horizontalement à l'intérieur de l'élément */
+}
+
+.grid-experiences-item:hover {
+  background-color: #00ff00;
+  color: #000000;
+
+}
+
+#liste-formations img{
+  height: 100px;
+  width: auto;
+}
+
+#liste-experiences img{
+  height: 100px;
+  width: auto;
+}
+
+.efrei{
+  display: none;
+}
+
+.philiance{
+  display: none;
+}
+
+.upec{
+  display: none;
+}
+
+.baccalaureat{
+  display: none;
+}
